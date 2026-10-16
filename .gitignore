@@ -9,6 +9,7 @@ credentials.json
 __pycache__/
 *.pyc
 *.pyo
+.venv/
 
 # Java / Large binaries (exclude general jars, but keep required Hive metastore JDBC driver)
 *.jar

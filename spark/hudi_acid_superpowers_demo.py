@@ -8,7 +8,7 @@ Apache Hudi Lakehouse Superpowers Demo:
 import sys
 import os
 import datetime
-from pyspark.sql import SparkSession
+from pyspark.sql import SparkSession, SparkSession, DataFrame
 from pyspark.sql.functions import col, lit
 
 def init_spark():
@@ -30,7 +30,7 @@ def main():
     
     # Check if table exists
     try:
-        df = spark.read.format("hudi").load(table_path)
+        df: DataFrame = spark.read.format("hudi").load(table_path)
         total_records = df.count()
         print(f"\n📊 Current Table Status: {total_records:,} total records in Lakehouse")
     except Exception as e:
